@@ -14,7 +14,9 @@ const Menu = ({ history }) => (
     <Fragment>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-            <Link class="navbar-brand" to="/">Hiro</Link>
+            <Link class="navbar-brand" to="/">
+                <img src="/logo-round.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" /> Hiro
+                </Link>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
