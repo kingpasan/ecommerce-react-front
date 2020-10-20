@@ -5,7 +5,7 @@ const Layout = ({ title = "Title", description = "Description", className, child
     <div>
         <Menu/>
         <div className="jumbotron">
-            <h2>{title}</h2>
+            <h2 style={{fontFamily: 'Roboto Slab'}} className="display-4">{title}</h2>
             <p className="lead">{description}</p>
         </div>
         <div className={className}>{children}</div>
