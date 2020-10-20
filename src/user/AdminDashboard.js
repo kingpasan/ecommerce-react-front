@@ -3,27 +3,27 @@ import Layout from '../core/Layout';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+const AdminDashboard = () => {
 
     const { user: { _id, name, email, role } } = isAuthenticated();
 
-    const userLinks = () => {
+    const adminLinks = () => {
         return (
             <div className="card bg-info">
-                <h4 className="card-header text-light">User Links</h4>
+                <h4 className="card-header text-light">Admin Links</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/cart">My Cart</Link>
+                        <Link className="nav-link" to="/create/category">Create Category</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/profile/update">Update Profile</Link>
+                        <Link className="nav-link" to="/create/product">Create Product</Link>
                     </li>
                 </ul>
             </div>
         );
     };
 
-    const userInfo = () => {
+    const adminInfo = () => {
         return (
             <div className="card mb-5 bg-dark">
                 <h3 className="card-header text-light">User Informtion</h3>
@@ -36,28 +36,16 @@ const Dashboard = () => {
         );
     };
 
-    const purchaseHistroy = () => {
-        return (
-            <div className="card mb-5 bg-secondary">
-                <h3 className="card-header text-light">Purchase History</h3>
-                <ul className="list-group">
-                    <li className="list-group-item">History</li>
-                </ul>
-            </div>
-        );
-    }
-
     return (
-        <Layout title="Dashboard" description={`Hello, ${name}!`} className="container">
+        <Layout title="Admin Dashboard" description={`Hello, ${name}!`} className="container">
             <div className="row">
 
                 <div className="col-md-3 mb-5">
-                    {userLinks()}
+                    {adminLinks()}
                 </div>
 
                 <div className="col-md-9 mb-5">
-                    {userInfo()}
-                    {purchaseHistroy()}
+                    {adminInfo()} 
                 </div>
 
             </div>
@@ -65,4 +53,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default AdminDashboard;
