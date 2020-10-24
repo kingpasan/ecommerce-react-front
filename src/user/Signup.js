@@ -35,26 +35,29 @@ const Signup = () => {
     }
 
     const signUpForm = () => (
-        <form>
 
-            <div className="form-group">
-                <label className="text-muted">Name: </label>
-                <input onChange={handleChange('name')} type="text" className="form-control" value={name} required />
+        <div className="card">
+            <div className="card-body">
+                <form>
+                    <div className="form-group">
+                        <label className="text-muted">Name: </label>
+                        <input onChange={handleChange('name')} type="text" className="form-control" value={name} required />
+                    </div>
+
+                    <div className="form-group">
+                        <label className="text-muted">Email: </label>
+                        <input onChange={handleChange('email')} type="email" className="form-control" value={email} required />
+                    </div>
+
+                    <div className="form-group">
+                        <label className="text-muted">Password: </label>
+                        <input onChange={handleChange('password')} type="password" className="form-control" value={password} required />
+                    </div>
+
+                    <button onClick={clickSubmit} className="btn btn-primary">Submit</button>
+                </form>
             </div>
-
-            <div className="form-group">
-                <label className="text-muted">Email: </label>
-                <input onChange={handleChange('email')} type="email" className="form-control" value={email} required />
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Password: </label>
-                <input onChange={handleChange('password')} type="password" className="form-control" value={password} required />
-            </div>
-
-            <button onClick={clickSubmit} className="btn btn-primary">Submit</button>
-        </form>
-
+        </div>
     );
 
     const showError = () => (
@@ -70,7 +73,7 @@ const Signup = () => {
     );
 
     return (
-        <Layout title="Signup" description="Signup to ecommerce application" className="container col-md-8 offset-md-2">
+        <Layout title="Signup" description="Signup to ecommerce application" className="container col-md-8 offset-md-2 ">
             {showSuccess()}
             {showError()}
             {signUpForm()}
